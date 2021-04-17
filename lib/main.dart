@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           '/profile': (context) => Profile(),
           '/holiday': (context) => Holiday(),
         },
-      home: Login(),
+      home: Attendence(),
     );
   }
 }
