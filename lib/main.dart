@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
         routes: {
@@ -24,8 +24,9 @@ class MyApp extends StatelessWidget {
           '/profile': (context) => Profile(),
           '/holiday': (context) => Holiday(),
         },
-      home: Attendence(),
+      home: Profile(),
     );
   }
 }
+
 

@@ -11,43 +11,21 @@ class _AttendenceState extends State<Attendence> {
   Widget build(BuildContext context) {
     return
       Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.purple,
+          title: Text('Profile'),),
       backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Stack(children: [
-            
-            SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10.0),
+       body: SingleChildScrollView(
+         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Stack(children: [
+
+              SafeArea(
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Icon(Icons.settings),
-                          SizedBox(
-                            height: 6.0,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 35.0),
-                            child: Text(
-                              'Profile',
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.poppins(
-                                color: Colors.black,
-                                fontSize: 25.0,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                     Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: Container(
@@ -73,11 +51,9 @@ class _AttendenceState extends State<Attendence> {
                     ),
                   ],
                 ),
-              ),
-            )
-          ]),
-          SingleChildScrollView(
-            child: SafeArea(
+              )
+            ]),
+             SafeArea(
               child: Padding(
                 padding: const EdgeInsets.only(left:10, right:10, top: 2.0),
                 child:Container(
@@ -91,7 +67,7 @@ class _AttendenceState extends State<Attendence> {
                                   blurRadius: 10.0,
                                 )
                               ]),
-                          height: MediaQuery.of(context).size.height,
+                          height: 600,
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
                             child: SingleChildScrollView(
@@ -106,14 +82,14 @@ class _AttendenceState extends State<Attendence> {
                                           'Name:',
                                           style: GoogleFonts.poppins(
                                               fontSize: 20.0,
-                                              color: Colors.blue,
+                                              color: Colors.purple,
                                               fontWeight: FontWeight.w700),
                                         ),
                                       ),
 
                                       Expanded(
                                         flex: 2,
-                                        child: Text("Mr. Kumar",
+                                        child: Text("Rani Sharma",
                                           style: GoogleFonts.poppins(
                                               fontSize: 20.0,
                                               color: Colors.black,
@@ -133,7 +109,7 @@ class _AttendenceState extends State<Attendence> {
                                           'Address:',
                                           style: GoogleFonts.poppins(
                                               fontSize: 20.0,
-                                              color: Colors.blue,
+                                              color: Colors.purple,
                                               fontWeight: FontWeight.w700),
                                         ),
                                       ),
@@ -162,7 +138,7 @@ class _AttendenceState extends State<Attendence> {
                                           'Phone:',
                                           style: GoogleFonts.poppins(
                                               fontSize: 20.0,
-                                              color: Colors.blue,
+                                              color: Colors.purple,
                                               fontWeight: FontWeight.w700),
                                         ),
                                       ),
@@ -191,7 +167,7 @@ class _AttendenceState extends State<Attendence> {
                                           'Email:',
                                           style: GoogleFonts.poppins(
                                               fontSize: 20.0,
-                                              color: Colors.blue,
+                                              color: Colors.purple,
                                               fontWeight: FontWeight.w700),
                                         ),
                                       ),
@@ -219,7 +195,7 @@ class _AttendenceState extends State<Attendence> {
                                           'Salary:',
                                           style: GoogleFonts.poppins(
                                               fontSize: 20.0,
-                                              color: Colors.blue,
+                                              color: Colors.purple,
                                               fontWeight: FontWeight.w700),
                                         ),
                                       ),
@@ -246,7 +222,7 @@ class _AttendenceState extends State<Attendence> {
                                           'Holidays left:',
                                           style: GoogleFonts.poppins(
                                               fontSize: 20.0,
-                                              color: Colors.blue,
+                                              color: Colors.purple,
                                               fontWeight: FontWeight.w700),
                                         ),
                                       ),
@@ -271,7 +247,7 @@ class _AttendenceState extends State<Attendence> {
                                           'Attendence:',
                                           style: GoogleFonts.poppins(
                                               fontSize: 20.0,
-                                              color: Colors.blue,
+                                              color: Colors.purple,
                                               fontWeight: FontWeight.w700),
                                         ),
                                       ),
@@ -298,10 +274,10 @@ class _AttendenceState extends State<Attendence> {
                                       //margin: EdgeInsets.only(bottom: 20),
                                       child: RaisedButton(
                                         elevation: 1.0,
-                                        color:Colors.blue,
+                                        color:Colors.purple,
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(30.0),
-                                          side: BorderSide(color: Colors.blue),
+                                          side: BorderSide(color: Colors.purple),
                                         ),
                                         onPressed: () {
 
@@ -335,10 +311,10 @@ class _AttendenceState extends State<Attendence> {
                           ),
                         )
     )
-    ),
-          )
+    )
     ]
-                          )
+                            ),
+       )
     );
 
   }
