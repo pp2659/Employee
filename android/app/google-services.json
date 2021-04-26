@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "762380121786",
+    "project_id": "employeesystem-975a9",
+    "storage_bucket": "employeesystem-975a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762380121786:android:946cef9c9ed2cd86a23483",
+        "android_client_info": {
+          "package_name": "com.pushprabha.employee_flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762380121786-iduh1faqivsgah2k7t7l738m4rmodes7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBXn4d5Gk61DEgzHpXtpjIf2xuVtXJlu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762380121786-iduh1faqivsgah2k7t7l738m4rmodes7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,9 +3,11 @@ import 'package:employee_flutter_app/holidayRequest.dart';
 import 'package:employee_flutter_app/login.dart';
 import 'package:employee_flutter_app/profile.dart';
 import 'package:flutter/material.dart';
-import '';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
           '/profile': (context) => Profile(),
           '/holiday': (context) => Holiday(),
         },
-      home: Profile(),
+      home: Login(),
     );
   }
 }
