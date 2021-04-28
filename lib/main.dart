@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+        debugShowCheckedModeBanner: false,
         routes: {
           '/login': (context) => Login(),
           '/attendence': (context) => Attendence(),
