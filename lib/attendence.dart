@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -5,7 +6,7 @@ class Attendence extends StatefulWidget {
   @override
   _AttendenceState createState() => _AttendenceState();
 }
-
+final FirebaseAuth auth = FirebaseAuth.instance;
 class _AttendenceState extends State<Attendence> {
   @override
   Widget build(BuildContext context) {
@@ -33,18 +34,17 @@ class _AttendenceState extends State<Attendence> {
                           children: [
                             Container(height: 100,
                               width: 100,
-                              child: Image(
-                                image: NetworkImage("https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg"),
+                              child: CircleAvatar(
+                                radius: 50,
+                                child: Icon(
+                                  Icons.person,
+                                  size: 90,
+                                ),
                               ),
                             ),
                             SizedBox(
                               height: 2.0,
                             ),
-                            Text(
-                              'Update',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 12.0, color: Colors.black45),
-                            )
                           ],
                         ),
                       ),
@@ -89,7 +89,7 @@ class _AttendenceState extends State<Attendence> {
 
                                       Expanded(
                                         flex: 2,
-                                        child: Text("Rani Sharma",
+                                        child: Text(auth.currentUser.email.substring(0,auth.currentUser.email.indexOf('@')),
                                           style: GoogleFonts.poppins(
                                               fontSize: 20.0,
                                               color: Colors.black,
@@ -174,9 +174,7 @@ class _AttendenceState extends State<Attendence> {
 
                                       Expanded(
                                         flex: 2,
-                                        child: Text(
-
-                                         "example@gmail.com" ,
+                                        child: Text(auth.currentUser.email,
                                           style: GoogleFonts.poppins(
                                               fontSize: 20.0,
                                               color: Colors.black,
@@ -284,7 +282,8 @@ class _AttendenceState extends State<Attendence> {
                                         },
                                         child: InkWell(
                                           onTap: ()  {
-
+                                           auth.signOut();
+                                           Navigator.pushNamed(context, '/login');
                                           },
                                           child: Align(
                                             alignment: Alignment.center,
