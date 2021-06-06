@@ -12,11 +12,11 @@ class _AttendenceState extends State<Attendence> {
   Widget build(BuildContext context) {
     return
       Scaffold(
-        appBar: AppBar(
+        appBar: AppBar(  // For the violet app bar at top
           backgroundColor: Colors.purple,
           title: Text('Profile'),),
       backgroundColor: Colors.white,
-       body: SingleChildScrollView(
+       body: SingleChildScrollView(  //used so the we can scroll the page
          child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -87,7 +87,7 @@ class _AttendenceState extends State<Attendence> {
                                         ),
                                       ),
 
-                                      Expanded(
+                                      Expanded( //use of ratio setup
                                         flex: 2,
                                         child: Text(auth.currentUser.email.substring(0,auth.currentUser.email.indexOf('@')),
                                           style: GoogleFonts.poppins(
@@ -98,7 +98,7 @@ class _AttendenceState extends State<Attendence> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
+                                  SizedBox( //for small gaps between
                                     height: 20.0,
                                   ),
                                   Row(
@@ -267,7 +267,7 @@ class _AttendenceState extends State<Attendence> {
 
                                   Center(
                                     child: Container(
-                                      height: .75 * (MediaQuery.of(context).size.height / 12),
+                                      height: .75 * (MediaQuery.of(context).size.height / 12),  // MediaQuery is used because the object ca ajdust according to the screen resolution
                                       width: 6.1 * (MediaQuery.of(context).size.width / 10),
                                       //margin: EdgeInsets.only(bottom: 20),
                                       child: RaisedButton(
@@ -280,7 +280,7 @@ class _AttendenceState extends State<Attendence> {
                                         onPressed: () {
 
                                         },
-                                        child: InkWell(
+                                        child: InkWell( // make the whole widgets inside it clickable
                                           onTap: ()  {
                                            auth.signOut();
                                            Navigator.pushNamed(context, '/login');

@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-final _firestore= FirebaseFirestore.instance;
+final _firestore= FirebaseFirestore.instance; // firebase package is imported
 final FirebaseAuth auth = FirebaseAuth.instance;
 class Holiday extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class _HolidayState extends State<Holiday> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   String name, id, department, reason;
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold( //the main area under which all the widgets are present
 
       key: _scaffoldKey,
       appBar: AppBar(
@@ -32,12 +32,12 @@ class _HolidayState extends State<Holiday> {
                 decoration: new BoxDecoration(
                   image: new DecorationImage(
                     image: NetworkImage(
-                        "https://image.freepik.com/free-photo/close-up-white-poster-texture_293060-1697.jpg"),
+                        "https://image.freepik.com/free-photo/close-up-white-poster-texture_293060-1697.jpg"),// Image is taken fromm internet throught the url
                     fit: BoxFit.fill,
                   ),
                 ),
               ),
-              Padding(
+              Padding( //for giving some space around the widget
                 padding: const EdgeInsets.only(left: 12.0, right: 12, top: 80),
                 child: Container(
                   height: 450,
@@ -69,7 +69,7 @@ class _HolidayState extends State<Holiday> {
                                 return null;
                               },
                               onChanged: (newValue) {
-                                name = newValue;
+                                name = newValue; //saves the value to name
                               },
                             ),
                             SizedBox(
@@ -157,6 +157,7 @@ class _HolidayState extends State<Holiday> {
                                 color: Colors.purple,
                                 textColor: Colors.white,
                                 onPressed: () {
+                                  //storing data to firebase
                                 _firestore.collection('holiday').doc(auth.currentUser.uid).collection(name).add(
                                 {
                                   'name':name,
@@ -167,7 +168,7 @@ class _HolidayState extends State<Holiday> {
                                      ).then((value) => print(value.id));
                                   print("pressed");
                                   _scaffoldKey.currentState.showSnackBar(
-                                      new SnackBar(
+                                      new SnackBar( //shows the snackbar at the bottom
                                         content: new Text('Request Submitted'),
                                       )
                                   );
